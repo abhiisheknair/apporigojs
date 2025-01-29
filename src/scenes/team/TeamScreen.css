@@ -1,0 +1,193 @@
+/* Ensure html and body take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Main content wrapper to allow vertical scrolling */
+.main-content {
+  height: 100%; /* Take full height of the page */
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding-bottom: 100px; /* Padding at the bottom in case of modal */
+}
+
+/* Team Grid Layout */
+.team-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns for desktop */
+  gap: 30px;
+  padding: 40px;
+  justify-items: center;
+}
+
+@media (max-width: 1200px) {
+  .team-grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    padding: 20px; /* Reduce padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+    padding: 10px; /* Even smaller padding */
+  }
+}
+
+/* Team Card Styling */
+.team-card {
+  
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 25px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.team-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.team-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.team-specialization {
+  font-size: 1.1rem;
+  color: #4cceac;
+  margin-bottom: 20px;
+}
+
+.team-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin: 3px;
+  margin-top: 2px;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.team-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Content Styling */
+.modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 650px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Modal content width reduces on smaller screens */
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .modal-content p {
+    font-size: 1rem; /* Adjust text size */
+  }
+}
+
+/* Close Button Styling */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-button:hover {
+  color: #f00;
+}
+
+/* Modal Content Text Styling */
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.modal-content p strong {
+  color: #333;
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

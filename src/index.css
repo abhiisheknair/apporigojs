@@ -1,0 +1,153 @@
+/* Base styling */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;600&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Code Pro', monospace;
+  background-color: #f4f7fa;
+}
+
+/* App wrapper */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 280px;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 10px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.sidebar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar .menu li {
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .menu li:hover {
+  background-color: #444;
+}
+
+.sidebar .footer {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Topbar styling */
+.Topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f7fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.topbar button:hover {
+  background-color: #0056b3;
+}
+
+.topbar button i {
+  font-size: 1.25rem;
+}
+
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar .menu li {
+    font-size: 1rem;
+  }
+
+  .topbar {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .sidebar .menu li {
+    padding: 10px 20px;
+  }
+
+  .topbar button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100px;
+  }
+
+  .sidebar .menu li {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .topbar button {
+    width: 35px;
+    height: 35px;
+  }
+}
